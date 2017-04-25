@@ -1,3 +1,6 @@
-<section class="room-list">
-    <div ng-repeat="room in chatRooms">{{ room }}</div>
-</section>
+<div class="page-header container">
+    <h1>Bloc Chat</h1>
+    <section class="room-list">
+        <a href="#" ng-repeat="room in home.chatRooms"> room {{ $index + 1 }} </a>
+    </section>
+</div>
