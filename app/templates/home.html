@@ -1,6 +1,11 @@
 <div class="page-header container">
-    <h1>Bloc Chat</h1>
+    <h1 class="title">Bloc Chat</h1>
+    <div class="create-room">
+        <button class="btn btn-primary" ng-click="home.clickModal()">Create Room</button>
+    </div>
     <section class="room-list">
-        <a href="#" ng-repeat="room in home.chatRooms"> room {{ $index + 1 }} </a>
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="#" ng-repeat="room in home.chatRooms">{{ room.name }}</a></li>
+        </ul>
     </section>
 </div>
