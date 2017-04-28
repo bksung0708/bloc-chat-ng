@@ -18,9 +18,9 @@
             Message.createMessage(newMessage);  
         };
         
-        this.messageList = Message.content;
+        this.messageList = Message.messageList;
         
-        this.udpateMessageList = function(room) {
+        this.updateMessageList = function(room) {
             //call Message.getMessageByRoomId(room)
             Message.getMsgByRoomId(room);
         }

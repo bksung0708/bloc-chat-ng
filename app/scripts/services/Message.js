@@ -5,7 +5,8 @@
       
     return {
         getMsgByRoomId: function(roomId) {
-            messages.orderByChild('roomId').EqualTo(roomId);
+            //messages.orderByChild('roomId').EqualTo(roomId);
+            return $firebaseArray(ref.orderByChild('roomId').equalTo(roomId));
         },
         createMessage: function(newMessage, roomId) {
             messages.$add({content:newMessage, roomId:roomId});

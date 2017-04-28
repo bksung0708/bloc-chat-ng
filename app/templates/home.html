@@ -5,10 +5,9 @@
     </div>
     <section class="room-list">
         <ul class="nav nav-pills">
-            <li role="presentation"><a href="#" ng-repeat="room in home.chatRooms"><div ng-click="home.selectRoom(room)">{{ room.roomName }}</div></a></li>
+            <li role="presentation"><a href="#" ng-repeat="room in home.chatRooms" ng-click="home.updateMessageList(room)">{{ room.roomName }}</a></li>
         </ul>
-        <div class="well message-list" ng-repeat="message in messages" ng-click="home.updateMessageList(room)">
-            {{ message.content }}
+        <div class="well message-list" ng-repeat="message in home.messageList">
         </div>
     </section>
     <div class="create-message">
