@@ -5,6 +5,7 @@
         };
         $scope.create = function() {
             Room.createRoom($scope.name);
+            $uibModalInstance.dismiss('cancel');
         };
     }
     

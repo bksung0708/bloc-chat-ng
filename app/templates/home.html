@@ -5,7 +5,14 @@
     </div>
     <section class="room-list">
         <ul class="nav nav-pills">
-            <li role="presentation"><a href="#" ng-repeat="room in home.chatRooms">{{ room.name }}</a></li>
+            <li role="presentation"><a href="#" ng-repeat="room in home.chatRooms"><div ng-click="home.selectRoom(room)">{{ room.roomName }}</div></a></li>
         </ul>
+        <div class="well message-list" ng-repeat="message in messages" ng-click="home.updateMessageList(room)">
+            {{ message.content }}
+        </div>
     </section>
+    <div class="create-message">
+        <textarea ng-model="newMessage"></textarea>
+        <button class="btn btn-primary" ng-click="home.createMessage(newMessage)">Create Message</button>
+    </div>
 </div>
