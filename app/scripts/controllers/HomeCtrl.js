@@ -1,6 +1,13 @@
 (function() {
     function HomeCtrl(Room, Message, $uibModal) {
         this.chatRooms = Room.all;
+        this.selectedRoom = null;
+        this.messages = null;
+        
+        this.selectRoom = function(room) {
+            this.selectedRoom = room;
+            this.messages = Message.getMsgByRoomId(this.selectedRoom.$id);
+        };
         
         this.clickModal = function() {
             var modalInstance = $uibModal.open({
@@ -17,13 +24,6 @@
         this.createMessage = function(newMessage) {
             Message.createMessage(newMessage);  
         };
-        
-        this.messageList = Message.messageList;
-        
-        this.updateMessageList = function(room) {
-            //call Message.getMessageByRoomId(room)
-            Message.getMsgByRoomId(room);
-        }
     }
     
     angular

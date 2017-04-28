@@ -5,13 +5,17 @@
     </div>
     <section class="room-list">
         <ul class="nav nav-pills">
-            <li role="presentation"><a href="#" ng-repeat="room in home.chatRooms" ng-click="home.updateMessageList(room)">{{ room.roomName }}</a></li>
+            <li role="presentation"><a href="#" ng-repeat="room in home.chatRooms" ng-click="home.selectRoom(room)">{{ room.roomName }}</a></li>
         </ul>
-        <div class="well message-list" ng-repeat="message in home.messageList">
+        <div class="well message-list">
+            <h3>{{home.selectedRoom.roomName}}</h3>
+            <p ng-repeat="message in home.messages">
+                {{message.content}}
+            </p>
+        </div>
+        <div class="create-message">
+            <textarea ng-model="newMessage"></textarea>
+            <button class="btn btn-primary" type="button" ng-click="home.createMessage(newMessage)">Create Message</button>
         </div>
     </section>
-    <div class="create-message">
-        <textarea ng-model="newMessage"></textarea>
-        <button class="btn btn-primary" ng-click="home.createMessage(newMessage)">Create Message</button>
-    </div>
 </div>
