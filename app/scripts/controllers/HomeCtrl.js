@@ -9,20 +9,20 @@
             this.messages = Message.getMsgByRoomId(this.selectedRoom.$id);
         };
         
+        this.sendMessage = function() {
+            Message.send(this.newMessage, this.selectedRoom.$id, this.userName);
+        };
+        
         this.clickModal = function() {
             var modalInstance = $uibModal.open({
-                templateUrl: 'templates/modal.html',
-                controller: 'ModalCtrl',
+                templateUrl: 'templates/roomModal.html',
+                controller: 'RoomModalCtrl',
                 size: 'md'
             });
             
             modalInstance.result.then(function(data) {
  				Room.createRoom(data);
  			});
-        };
-        
-        this.createMessage = function(newMessage) {
-            Message.createMessage(newMessage);  
         };
     }
     

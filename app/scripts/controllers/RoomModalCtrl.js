@@ -1,5 +1,5 @@
 (function() {
-    function ModalCtrl($scope, Room, $uibModalInstance) {
+    function RoomModalCtrl($scope, Room, $uibModalInstance) {
         $scope.cancel = function() {
             $uibModalInstance.dismiss('cancel');
         };
@@ -8,8 +8,8 @@
             $uibModalInstance.dismiss('cancel');
         };
     }
-    
+
     angular
         .module('blocChat')
-        .controller('ModalCtrl', ['$scope', 'Room', '$uibModalInstance', ModalCtrl]);
+        .controller('RoomModalCtrl', ['$scope', 'Room', '$uibModalInstance', RoomModalCtrl]);
 })();

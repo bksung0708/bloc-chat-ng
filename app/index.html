@@ -17,6 +17,7 @@
     <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
     <script>
       // Initialize Firebase
       var config = {
@@ -30,9 +31,11 @@
       firebase.initializeApp(config);
     </script>
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/services/BlocChatCookies.js"></script>
     <script src="/scripts/services/Room.js"></script>
     <script src="/scripts/services/Message.js"></script>
-    <script src="/scripts/controllers/homeCtrl.js"></script>
-    <script src="/scripts/controllers/ModalCtrl.js"></script>
+    <script src="/scripts/controllers/HomeCtrl.js"></script>
+    <script src="/scripts/controllers/RoomModalCtrl.js"></script>
+    <script src="/scripts/controllers/UserNameModalCtrl.js"></script>
 </body>
 </html>
